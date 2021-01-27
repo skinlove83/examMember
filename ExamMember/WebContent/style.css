@@ -1,0 +1,570 @@
+@charset "utf-8";
+
+body {
+	background: rgb(238, 174, 202);
+	background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%,
+		rgba(148, 187, 233, 1) 100%);
+	color: white;
+	text-align: center;
+	font-family: 'Nanum Myeongjo', serif;
+}
+
+a {
+	color: inherit;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+.fixed {
+	/* position: fixed;
+  top: 100px;
+  left: 50%;
+  transform:translateX(-50%); */
+	
+}
+
+.menu {
+	-webkit-filter: url("#shadowed-goo");
+	filter: url("#shadowed-goo");
+}
+
+.menu-item, .menu-open-button {
+	background: #0774f4;
+	border-radius: 100%;
+	width: 80px;
+	height: 80px;
+	margin-left: -40px;
+	position: absolute;
+	top: 20px;
+	color: white;
+	text-align: center;
+	line-height: 80px;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition: -webkit-transform ease-out 200ms;
+	transition: -webkit-transform ease-out 200ms;
+	transition: transform ease-out 200ms;
+	transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.menu-open {
+	display: none;
+}
+
+.hamburger {
+	width: 25px;
+	height: 3px;
+	background: white;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -12.5px;
+	margin-top: -1.5px;
+	-webkit-transition: -webkit-transform 200ms;
+	transition: -webkit-transform 200ms;
+	transition: transform 200ms;
+	transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.hamburger-1 {
+	-webkit-transform: translate3d(0, -8px, 0);
+	transform: translate3d(0, -8px, 0);
+}
+
+.hamburger-2 {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.hamburger-3 {
+	-webkit-transform: translate3d(0, 8px, 0);
+	transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked+.menu-open-button .hamburger-1 {
+	-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+	transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.menu-open:checked+.menu-open-button .hamburger-2 {
+	-webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+	transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+.menu-open:checked+.menu-open-button .hamburger-3 {
+	-webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+	transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu {
+	position: absolute;
+	left: 50%;
+	margin-left: -190px;
+	padding-top: 20px;
+	padding-left: 190px;
+	width: 380px;
+	height: 250px;
+	box-sizing: border-box;
+	font-size: 20px;
+	text-align: left;
+}
+
+.menu-item:hover {
+	background: white;
+	color: #0774f4;
+}
+
+.menu-item:nth-child(3) {
+	-webkit-transition-duration: 70ms;
+	transition-duration: 70ms;
+}
+
+.menu-item:nth-child(4) {
+	-webkit-transition-duration: 130ms;
+	transition-duration: 130ms;
+}
+
+.menu-item:nth-child(5) {
+	-webkit-transition-duration: 190ms;
+	transition-duration: 190ms;
+}
+
+.menu-item:nth-child(6) {
+	-webkit-transition-duration: 250ms;
+	transition-duration: 250ms;
+}
+
+.menu-item:nth-child(7) {
+	-webkit-transition-duration: 310ms;
+	transition-duration: 310ms;
+}
+
+.menu-open-button {
+	z-index: 2;
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;
+	-webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+	transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+	cursor: pointer;
+}
+
+.menu-open-button:hover {
+	-webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+	transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked+.menu-open-button {
+	-webkit-transition-timing-function: linear;
+	transition-timing-function: linear;
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+	-webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+	transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+	-webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+	transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+	-webkit-transition-duration: 160ms;
+	transition-duration: 160ms;
+	-webkit-transform: translate3d(114.42548px, 11.48084px, 0);
+	transform: translate3d(114.42548px, 11.48084px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+	-webkit-transition-duration: 240ms;
+	transition-duration: 240ms;
+	-webkit-transform: translate3d(77.18543px, 85.2491px, 0);
+	transform: translate3d(77.18543px, 85.2491px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+	-webkit-transition-duration: 320ms;
+	transition-duration: 320ms;
+	-webkit-transform: translate3d(0.09158px, 114.99996px, 0);
+	transform: translate3d(0.09158px, 114.99996px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+	-webkit-transition-duration: 400ms;
+	transition-duration: 400ms;
+	-webkit-transform: translate3d(-77.04956px, 85.37192px, 0);
+	transform: translate3d(-77.04956px, 85.37192px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(7) {
+	-webkit-transition-duration: 480ms;
+	transition-duration: 480ms;
+	-webkit-transform: translate3d(-114.40705px, 11.66307px, 0);
+	transform: translate3d(-114.40705px, 11.66307px, 0);
+}
+
+/* 이미지 */
+.imgBox {
+	display: block;
+	margin-top: 160px;
+	padding: 0 100px 50px;
+}
+
+.imgBox figure {
+	display: inline-block;
+}
+
+.imgBox figure>img {
+	width: 400px;
+	height: 400px;
+}
+
+/* 테이블 */
+.tableBox {
+	display: block;
+	margin-top: 160px;
+	padding: 0 100px 50px;
+}
+
+.tableBox table {
+	width: 100%;
+	table-layout: fixed;
+	border-top: solid 2px #0e347e;
+}
+
+.tableBox table thead {
+	border-top: solid 2px #0e347e;
+	border-bottom: 1px solid #0e347e;
+}
+
+.tableBox .m_ver {
+	display: none;
+}
+
+.tableBox th, .tableBox td {
+	text-align: center;
+	font-size: 1.071rem;
+	letter-spacing: -0.1px;
+}
+
+.tableBox th {
+	padding: 20px 10px;
+	color: #0e347e;
+	font-weight: 400;
+	border-bottom: 1px solid #0e347e;
+	text-align: center !important;
+}
+
+.tableBox td {
+	padding: 28px 10px;
+	color: #666;
+	border-bottom: solid 1px #c8c8c8;
+	font-weight: 300;
+	font-size: 0.937rem;
+}
+
+.tableBox .td_area {
+	width: 163px;
+}
+
+.tableBox .td_shop {
+	width: 157px;
+	font-weight: 400;
+	color: #333333;
+}
+
+.tableBox .td_addr {
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.tableBox .td_tel {
+	width: 160px;
+}
+
+.tableBox .more {
+	width: 58px;
+}
+
+.tableBox .tr_list {
+	cursor: pointer;
+}
+
+.tableBox .tr_list:hover {
+	background: #0e347e;
+}
+
+.tableBox .tr_list:hover td {
+	color: #fff;
+}
+
+.tableBox .sub_table {
+	padding: 34px 30px;
+	background: #f8f8f8;
+	display: none;
+}
+
+.tableBox .sub_table.on {
+	display: table-cell;
+}
+
+.tableBox .sub_table .inner {
+	display: flex;
+	align-items: center;
+	margin: 0 -15px 20px;
+	text-align: left;
+	font-size: 1rem;
+}
+
+.tableBox .sub_table .inner ul {
+	text-align: left;
+}
+
+.tableBox .sub_table .inner>div {
+	width: calc(50% - 30px);
+	margin: 0 15px 0;
+}
+
+.tableBox .sub_table .inner>div>img {
+	
+}
+
+.tableBox .sub_table .inner ul {
+	text-align: left;
+}
+
+.tableBox .sub_table .inner ul li {
+	padding: 15px 20px;
+	display: flex;
+	font-size: 0.937rem;
+}
+
+.tableBox .sub_table .inner ul .tit {
+	width: 20%;
+	color: #0e347e;
+	font-weight: 400;
+}
+
+.tableBox .sub_table .inner ul .txt {
+	width: 80%;
+	color: #707070;
+	font-weight: 300;
+}
+
+.tableBox .sub_table .inner ul .tit {
+	width: 20%;
+	color: #0e347e;
+	font-weight: 400;
+}
+
+.tableBox .sub_table .inner ul .txt {
+	width: 80%;
+	color: #707070;
+	font-weight: 300;
+}
+
+/* form */
+.formBox {
+	display: block;
+	margin-top: 160px;
+	padding: 0 100px 50px;
+}
+
+.formBox2 {
+	margin-top: 0;
+}
+
+.formBox table {
+	width: 100%;
+	table-layout: fixed;
+	border-top: solid 2px #0e347e;
+	border-collapse: separate;
+	border-collapse: collapse;
+}
+
+.formBox table tr:first-child th, .formBox table tr:first-child td {
+	border-top: 0;
+}
+
+.formBox table th, .formBox table td {
+	padding: 10px;
+}
+
+.formBox table th {
+	border: 1px solid #fff;
+	width: 20%;
+	background: #0e347e;
+	color: #fff;
+}
+
+.formBox table td {
+	border: 1px solid #fff;
+	text-align: left;
+	width: 80%
+}
+
+/* 리스트 */
+.listBox {
+	display: block;
+	width: 90%;
+	text-align: center;
+	margin: 110px auto 0;
+}
+
+.listBox:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.blue {
+	background-color: rgba(0, 0, 255, 0.1);
+}
+
+.red {
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+.listBox div {
+	float: left;
+	display: block;
+	width: 49%;
+	margin-right: 5px;
+	position: relative;
+}
+
+.listBox div hr {
+	border-top: 1px dashed #bbb;
+}
+
+.listBox div hr:after {
+	content: '\002702';
+	display: inline-block;
+	position: absolute;
+	top: 29px;
+	left: 14px;
+	padding: 0 3px;
+	background: transparent;
+	color: #fff;
+	font-size: 18px;
+}
+
+.listBox div ul {
+	
+}
+
+.listBox ul li {
+	list-style: square;
+	text-align: left;
+	padding: 10px 0;
+}
+
+.listBox ul li p {
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+.listBox ol div {
+	float: left;
+	display: block;
+	width: 49%;
+}
+
+.listBox ol {
+	
+}
+
+.listBox ol li {
+	text-align: left;
+	color: #fff;
+	padding: 10px 0;
+	list-style: revert;
+}
+
+.listBox ol li p {
+	color: #fff;
+	padding: 0;
+	margin: 0;
+}
+
+/* 비디오 박스 */
+.videoBox {
+	display: block;
+	margin-top: 110px;
+	padding: 0 100px;
+}
+
+.videoBox dl {
+	
+}
+
+.videoBox dl dt {
+	background: #0e347e;
+	color: #fff;
+	font-size: 30px;
+	padding: 10px 0;
+}
+
+.videoBox dl dt {
+	margin-top: 10px
+}
+
+.videoBox dl dd {
+	background: #fff;
+	margin: 0;
+	padding: 20px 0;
+}
+
+.videoBox video {
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+}
+
+.logintop {
+	display: block;
+	padding: 20px;
+	border: 1px solid;
+	margin-top: 10px;
+}
+
+.logintop a {
+	padding: 0 20px;
+}
+
+.loginBox {
+	display: block;
+	margin-top: 110px;
+	padding: 0 100px 50px;
+}
+
+.loginBox .loginTable {
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.loginBox .loginTable th {
+	text-align: left;
+	padding-right: 20px;
+}
+
+.loginBox input[type=submit], .loginBox input[type=button] {
+	background: #0774f4;
+	border: 0;
+	color: #fff;
+	padding: 5px 10px;
+}
