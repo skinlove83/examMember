@@ -9,7 +9,7 @@
     String id = session.getAttribute("id").toString();
 	String pw = session.getAttribute("pw").toString();
     MemberDAO dao = MemberDAO.getInstance();    
-    MemberDTO memberdto = dao.getDB(id,pw);
+    MemberDTO memberdto = dao.getUserInfo(id);
     
 %>
 <meta charset="EUC-KR">

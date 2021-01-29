@@ -66,7 +66,7 @@
 						
 					String url = "jdbc:mysql://localhost:3306/examloginDB";
 					String user = "root";
-					String pw = "mysql";
+					String pw = "zerock";
 					
 					try{
 						
